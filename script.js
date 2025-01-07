@@ -46,15 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-
-
-
 // <!-- /* --- About me JS code ---*/ -->
 
 const currYearText = document.querySelector('.about-me-currYear');
 const currYear = new Date().getFullYear();
 
 currYearText.textContent = currYear;
+
+
+// pre-loader
+
+const preloader = document.querySelector('#preloader');
+const app = document.querySelector('#app');
+
+app.style.display = 'none';
+document.body.style.backgroundColor = '#000';
+
+setTimeout(() => {
+    preloader.style.display = 'none';
+    app.style.display = 'block';
+    document.body.style.backgroundColor = '#fff';
+}, 1500);
